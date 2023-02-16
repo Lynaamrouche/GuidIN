@@ -1,6 +1,7 @@
 package com.example.guidin.ui.theme.screens
 
 import android.graphics.drawable.Icon
+import android.widget.Space
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.KeyboardOptions
@@ -77,7 +78,7 @@ fun LoginArea() {
                 //fontFamily = Reemkufi
 
       )   **/
-
+///////////////////////// Continuer avec google ////////////////////////
             Button(onClick = {},
             modifier = Modifier
                 .padding(top = 20.dp)
@@ -205,7 +206,7 @@ fun LoginArea() {
 ///////////////////////////// fin champs password /////////////////////////////////
 ///////////////////////////// debut bouton Login  /////////////////////////////////
 
-                     /**   Button(onClick =  {},
+                        Button (onClick = {},
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(horizontal = 20.dp)
@@ -216,12 +217,36 @@ fun LoginArea() {
                             ),
                             contentPadding = PaddingValues(vertical = 14.dp)
                             ) {
-                         Text(text = "Login",
-                         fontFamily = Poppins,
+                         Text(text = "Login"
+                         //fontFamily = Poppins,
                              )
-                        } **/
+                        }
+///////////////////////////// Password forget /////////////////////////////////
+
+                        TextButton(onClick = {}) {
+                            Text(text = "Forot Password ?",
+                            color = LightTextColor,
+                                //fontFamily = Poppins,
+                                fontSize = 12.sp,
+                                modifier = Modifier.padding(top = 15.dp)
+                                )
+                            }
+ ///////////////////////////// fin Password forget /////////////////////////////////
+///////////////////////////// debut have already  an account  /////////////////////////////////
+
+                        TextButton(onClick = {}) {
+                            Text(text = " Don't Have an Account ? Sign Up ",
+                                color = LightTextColor,
+                               fontFamily = Poppins,
+                                fontSize = 12.sp,
+                                modifier = Modifier.padding(top = 5.dp)
+                            )
+                        }
+                  //     Spacer(modifier = Modifier.height(.dp))
 
 
+
+///////////////////////////// fin have already  an account /////////////////////////////////
 
 ///////////////////////////// fin boutton Login /////////////////////////////////
 
@@ -243,13 +268,25 @@ fun BackgroundImage() {
     Box (
         contentAlignment = Alignment.TopCenter
         ){
-
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.End
+        ) {
+            Column(
+                verticalArrangement = Arrangement.Top,
+                horizontalAlignment =  Alignment.CenterHorizontally
+            ) {
         Image(painter = painterResource(id = R.drawable.logo_complet_removebg), contentDescription = "",
         modifier = Modifier
-            .fillMaxSize()
-            .padding(bottom = 80.dp)
+            //.fillMaxSize()
+            //.fillMaxHeight()
+            .fillMaxWidth()
+           // .padding(bottom = 80.dp)
 
 
     )
-    }
+                    }
+            }
+
+       }
 }

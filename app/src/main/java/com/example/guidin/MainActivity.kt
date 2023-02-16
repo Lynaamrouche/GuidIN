@@ -14,6 +14,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.guidin.ui.theme.GuidINTheme
 import com.example.guidin.ui.theme.PrimaryColor
 import com.example.guidin.ui.theme.screens.LoginScreen
+import com.example.guidin.ui.theme.screens.Registerscreen
+import com.example.guidin.ui.theme.screens.SettingScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,7 +29,11 @@ class MainActivity : ComponentActivity() {
                         color = Color.White,
 
                     ) {
-                        LoginScreen()
+                        //LoginScreen()
+                        //Registerscreen()
+                        //LoginScreen()
+
+                        SettingScreen()
                     }
                 },
             )
