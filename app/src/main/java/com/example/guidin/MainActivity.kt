@@ -13,6 +13,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.guidin.ui.theme.GuidINTheme
 import com.example.guidin.ui.theme.PrimaryColor
+import com.example.guidin.ui.theme.screens.GuidageScreen
 import com.example.guidin.ui.theme.screens.LoginScreen
 import com.example.guidin.ui.theme.screens.Registerscreen
 import com.example.guidin.ui.theme.screens.SettingScreen
@@ -33,7 +34,8 @@ class MainActivity : ComponentActivity() {
                         //Registerscreen()
                         //LoginScreen()
 
-                        SettingScreen()
+                        //SettingScreen()
+                        GuidageScreen()
                     }
                 },
             )

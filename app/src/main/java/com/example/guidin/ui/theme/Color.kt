@@ -14,3 +14,7 @@ val PrimaryColor = Color(0xE893E2DC)
 val LightTextColor = Color(0xFF758684)
 val PlaceholderColor = Color(0xFFE5E5E5)
 val BackgroundColorSetting = Color(0xF2B5F0EB)
+val IconPrimaryColor = Color(0xFFFD9D43)
+
+val LightPrimaryColor = Color(0xFFFFF6EE)
+val SecondaryColor = Color(0xFF593153)

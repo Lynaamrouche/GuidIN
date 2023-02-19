@@ -53,29 +53,257 @@ fun SettingScreen() {
         HeaderText()
         ProfilCardUI()
         GeneralOptionUI()
+        SupportOptionUI()
     }
 
 }
 
+@OptIn(ExperimentalMaterialApi::class)
 @Composable
-fun GeneralOptionUI() {
-    Column() {
-        Text (text = "Check Your Profile",
-            //color = Color.Black,
-            //textAlign = TextAlign.Center,
+fun SupportOptionUI() {
 
-            //fontWeight = FontWeight.Bold,
-            //fontSize = 16.sp
+    Column(modifier = Modifier
+        .padding(top = 3.dp)
+        .padding(horizontal = 14.dp)) {
+        Text(
+            text = "Support",
+            color = Color.Black,
+            fontSize = 16.sp,
+            modifier = Modifier.padding(vertical = 8.dp)
+        )
+/////////////////////////////// Contact  ///////////////////
+
+        SupportOptionItem(
+            Icon =R.drawable.contact_support,
+            mainText ="Contact US",
+            onClick = {
+                //click event here
+            }
+
+        )
+/////////////////////////////// FAQ  ///////////////////
+        SupportOptionItem(
+        Icon =R.drawable.quiz,
+        mainText ="F A Q",
+        onClick = {
+            //click event here
+        } )
+/////////////////////////////// Privacy Police   ///////////////////
+
+        SupportOptionItem(
+            Icon =R.drawable.admin_panel_settings,
+            mainText ="Privacy Police",
+            onClick = {
+                //click event here
+            } )
+
+/////////////////////////////// About US   ///////////////////
+        SupportOptionItem(
+            Icon =R.drawable.info,
+            mainText ="About",
+            onClick = {
+                //click event here
+            } )
+
+
+    }
+
+}
+
+
+
+@ExperimentalMaterialApi
+@Composable
+fun SupportOptionItem(
+    Icon:Int,
+    mainText:String,
+    onClick:()->Unit
+) {
+
+    Card(
+        onClick = {
+            onClick()
+        },
+        backgroundColor = Color.White,
+        modifier = Modifier
+            .padding(bottom = 8.dp)
+            .fillMaxWidth(),
+        elevation = 0.dp
+    ) {
+        Row(
+            modifier = Modifier
+                .padding(vertical = 10.dp)
+                .padding(horizontal = 14.dp),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+            Row(verticalAlignment = Alignment.CenterVertically)
+            {
+                Box(
+                    modifier = Modifier
+                        .size(34.dp)
+                        .clip(shape = Shapes.medium)
+                        .background(LightPrimaryColor)
+
+                )
+                {
+                    Icon(
+                        painter = painterResource(Icon),
+                        contentDescription = "",
+                        tint = Color.Black,
+                        modifier = Modifier.padding(8.dp)
+                    )
+                }
+                Spacer(modifier = Modifier.width(14.dp))
+            }
+            Column() {
+/////////////////////////////////// Contact  ////////////////////////////////
+
+                Text( //modifier = Modifier.padding(horizontal = 10.dp),
+                    text = mainText,
+                    color = Color.Black,
+                    textAlign = TextAlign.Center,
+
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 16.sp
+                )
+            }
+        }
+
+        Icon(
+            painter = painterResource(id = R.drawable.navigate_next),
+            contentDescription = "next",
+            tint = Color.Black,
+            modifier = Modifier.size(16.dp)
         )
     }
 }
 
+
+@OptIn(ExperimentalMaterialApi::class)
+@Composable
+fun GeneralOptionUI() {
+    Column(modifier = Modifier
+        .padding(top = 3.dp)
+        .padding(horizontal = 14.dp)) {
+        Text (text = "General",
+            color = Color.Black,
+            fontSize = 16.sp,
+            modifier = Modifier.padding(vertical = 8.dp)
+        )
+//////////////////////// customize more ////////
+        GeneralSettingsItem(
+            Icon =R.drawable.manage_accounts,
+            mainText ="Manage Profil",
+            subText = "Custumize more your profil",
+            onClick = {
+                //click event here
+            }
+        )
+
+        /////////////////////////////// travel history ///////////////////
+        GeneralSettingsItem(
+            Icon =R.drawable.history,
+            mainText ="Travel history",
+            subText = "Check your Last travels",
+            onClick = {
+                //click event here
+            }
+        )
+
+
+    }
+}
+
+@ExperimentalMaterialApi
+@Composable
+fun GeneralSettingsItem(
+    Icon:Int,
+    mainText:String,
+    subText:String,
+    onClick:()->Unit
+) {
+    Card(
+        onClick = {
+                  onClick()
+        },
+        backgroundColor = Color.White,
+        modifier = Modifier
+            .padding(bottom = 8.dp)
+            .fillMaxWidth(),
+        elevation = 0.dp
+    ) {
+        Row(
+            modifier = Modifier
+                .padding(vertical = 10.dp)
+                .padding(horizontal = 14.dp),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+            Row(verticalAlignment = Alignment.CenterVertically)
+            {
+                Box(
+                    modifier = Modifier
+                        .size(34.dp)
+                        .clip(shape = Shapes.medium)
+                        .background(LightPrimaryColor)
+
+                )
+                {
+                    Icon(
+                        painter = painterResource(Icon),
+                        contentDescription = "",
+                        tint = Color.Black,
+                        modifier = Modifier.padding(8.dp)
+                    )
+                }
+                Spacer(modifier = Modifier.width(14.dp))
+                Column() {
+/////////////////////////////////// Travel history ////////////////////////////////
+
+                    Text( //modifier = Modifier.padding(horizontal = 10.dp),
+                        text = mainText,
+                        color = Color.Black,
+                        textAlign = TextAlign.Center,
+
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 16.sp
+                    )
+
+                    Text( //modifier = Modifier.padding(horizontal = 10.dp),
+                        text = subText,
+                        color = Color.Gray,
+                        //textAlign = TextAlign.Center,
+
+                        fontWeight = FontWeight.SemiBold,
+                        fontSize = 10.sp,
+                        modifier = Modifier.offset(y = (-4).dp)
+                            //.padding(horizontal = 10.dp)
+                            .padding(top = 5.dp)
+                    )
+
+                }
+            }
+
+            Icon(
+                painter = painterResource(id = R.drawable.navigate_next),
+                contentDescription = "next",
+                tint = Color.Black,
+                modifier = Modifier.size(16.dp)
+            )
+            /////////////////////////////////// Travel history ////////////////////////////////
+        }
+
+
+
+    }
+}
 @Composable
 fun ProfilCardUI() {
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .heightIn(150.dp)
+            .heightIn(50.dp)
             .padding(10.dp),
     backgroundColor = Color.White,
         elevation = 0.dp,
