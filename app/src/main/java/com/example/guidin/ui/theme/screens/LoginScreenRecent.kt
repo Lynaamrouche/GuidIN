@@ -115,7 +115,7 @@ fun LoginScreenRecent() {
                             verticalAlignment = Alignment.CenterVertically
                         ) {
                             Icon(
-                                painter = painterResource(id = R.drawable.search),
+                                painter = painterResource(id = R.drawable.ic_user),
                                 contentDescription = "",
                                 tint = PrimaryColor,
                                 modifier = Modifier.size(20.dp)
@@ -172,7 +172,7 @@ fun LoginScreenRecent() {
                             verticalAlignment = Alignment.CenterVertically
                         ) {
                             Icon(
-                                painter = painterResource(id = R.drawable.search),
+                                painter = painterResource(id = R.drawable.ic_password),
                                 contentDescription = "",
                                 tint = PrimaryColor,
                                 modifier = Modifier.size(20.dp)
