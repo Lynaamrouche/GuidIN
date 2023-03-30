@@ -46,7 +46,7 @@ import androidx.compose.material.Text as Text
 fun SettingScreen() {
     Column(modifier = Modifier
         .fillMaxSize()
-        .background(color = BackgroundColorSetting)
+        .background(color = lilas)
     )
         {
         //BackgroundSetting()
@@ -324,6 +324,9 @@ fun ProfilCardUI() {
                 )
                 
                 Button(onClick = {},
+                    colors = ButtonDefaults.buttonColors(
+                        backgroundColor = crevette
+                    ),
                     modifier = Modifier
                        .padding( 10.dp),
                     contentPadding = PaddingValues(horizontal = 30.dp)
@@ -331,6 +334,8 @@ fun ProfilCardUI() {
                         defaultElevation = 0.dp,
                         pressedElevation = 2.dp
                 ),
+
+
                     shape = Shapes.medium
                     )
 
