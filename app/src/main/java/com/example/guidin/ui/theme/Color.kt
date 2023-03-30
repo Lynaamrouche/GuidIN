@@ -18,3 +18,12 @@ val IconPrimaryColor = Color(0xFFFD9D43)
 
 val LightPrimaryColor = Color(0xFFFFF6EE)
 val SecondaryColor = Color(0xFF593153)
+val violetSympa = Color(675283)
+val lilas = Color(197, 216, 255)
+val bleuViolet = Color(18, 10, 90)
+val violetDoux = Color(103, 82, 131)
+val beigeComplementViolet = Color(255, 236, 197)
+val beigeComplementVioletDel = Color(255, 244, 223)
+val crevette =  Color(255, 213, 214)
+
+

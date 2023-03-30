@@ -41,67 +41,64 @@ import com.example.guidin.ui.theme.*
 import androidx.wear.tiles.material.Text
 
 
-
 @Composable
 fun GuidageScreen(){
-
-    var destination by remember { mutableStateOf("") }
-
     Column(
-        modifier = Modifier.fillMaxWidth(),
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Text (text = "Guiding you every step of the way",
-            color = Color.Black,
-            fontSize = 16.sp,
-            fontWeight = FontWeight.ExtraBold,
-            //fontFamily = Poppins
-            textAlign = TextAlign.Center,
-            //modifier = Modifier.width(150.dp),
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(top = 80.dp)
-        )
-        
-        Image(painter = painterResource(id = R.drawable.register_image),
-            contentDescription = "",
-        modifier = Modifier.size(240.dp))
-
-        Card(
-            backgroundColor = Color.White,
-        elevation = 0.dp,
         modifier = Modifier
-            .fillMaxWidth()
-            .padding(20.dp)) {
+            //.background(color = BackgroundColorSetting)
+            .padding(24.dp)
+            .fillMaxSize(),
+        verticalArrangement = Arrangement.spacedBy(16.dp, alignment = Alignment.Bottom),
+        horizontalAlignment = Alignment.CenterHorizontally,
+    ) {
 
-          Column(
-              modifier = Modifier.padding(vertical = 20.dp)
-
-            ) {
-
-
-              Text(
-                  text = "Enter your destination bellow",
-                  color = Color.Black,
-                  fontSize = 12.sp,
-                  fontWeight = FontWeight.ExtraBold,
-                  //fontFamily = Poppins
-                  textAlign = TextAlign.Center,
-                  modifier = Modifier
-                      .fillMaxWidth()
-                      .padding(top = 10.dp)
-              )
-
-                TextField(value = destination, onValueChange = {destination = it})
-              
-
-          }
-
-        }
-        
-        
+        SearchDest()
     }
-
-
-
 }
+
+@Composable
+fun SearchDest() {
+
+    //selectedIndex sera utilisée pour stocker l'index de la destination sélectionnée.
+
+    var selectedIndex by remember { mutableStateOf(0) }
+    val destinations = listOf("Salle51", "Biblio", "Audito", "scolarite", "Cafeteria")
+    var destination by remember { mutableStateOf("") }
+    var isExpanded by remember { mutableStateOf(false) }
+
+    Box {
+        Button(
+            onClick = { isExpanded = !isExpanded },
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text(destination)
+        }
+        DropdownMenu(
+            modifier = Modifier.fillMaxWidth(),
+            expanded = isExpanded,
+            onDismissRequest = { isExpanded = false }
+        ) {
+            destinations.forEachIndexed { index, dest ->
+                DropdownMenuItem(
+                    onClick = {
+                        selectedIndex = index
+                       destination = dest
+                        isExpanded = false
+                    },
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Text(text = destination)
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+

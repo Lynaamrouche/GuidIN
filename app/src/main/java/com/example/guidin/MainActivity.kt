@@ -17,6 +17,7 @@ import com.example.guidin.ui.theme.screens.GuidageScreen
 import com.example.guidin.ui.theme.screens.LoginScreen
 import com.example.guidin.ui.theme.screens.Registerscreen
 import com.example.guidin.ui.theme.screens.SettingScreen
+import com.example.guidin.ui.theme.screens.SearchScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,7 +36,8 @@ class MainActivity : ComponentActivity() {
                         //LoginScreen()
 
                         //SettingScreen()
-                        GuidageScreen()
+                        //GuidageScreen()
+                        SearchScreen()
                     }
                 },
             )
