@@ -62,7 +62,7 @@ fun LoginScreenRecent() {
                 contentDescription = "",
                 modifier = Modifier.size(260.dp)
             )
-        }
+        } //fin column
 
 
         Card(

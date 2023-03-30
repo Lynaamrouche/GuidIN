@@ -30,10 +30,11 @@ class MainActivity : ComponentActivity() {
                     ) {
                         //LoginScreen()
                         //Registerscreen()
-                        LoginScreenRecent()
+                        //LoginScreenRecent()
+                      //  RegisterScreenRecent()
 
                         //SettingScreen()
-
+                        Register()
                         //SearchScreen()
                     }
                 },

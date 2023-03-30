@@ -1,3 +1,6 @@
+
+
+/***
 package com.example.guidin.ui.theme.screens
 
 import android.graphics.drawable.Icon
@@ -623,3 +626,4 @@ fun BackgroundImageRegister() {
 
     }
     }
+**/
