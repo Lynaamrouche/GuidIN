@@ -39,9 +39,7 @@ fun LoginArea() {
 
 
     var email by remember{ mutableStateOf("")}
-    var password by remember {
-        mutableStateOf("")
-    }
+    var password by remember { mutableStateOf("")}
 
     var isPasswordOpen by remember{ mutableStateOf(false) }
 
@@ -104,6 +102,7 @@ fun LoginArea() {
             }
 
 ///////////////////////////// debut formulaire de conenxion  /////////////////////////////////
+          /**
             Card(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -252,7 +251,7 @@ fun LoginArea() {
 
                 }
             }
-
+           **/
 
 
 
@@ -260,6 +259,7 @@ fun LoginArea() {
         }
     }
 }
+
 
 
 

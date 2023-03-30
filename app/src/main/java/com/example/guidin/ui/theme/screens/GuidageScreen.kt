@@ -40,7 +40,7 @@ import com.example.guidin.ui.theme.*
 //import androidx.compose.foundation.Text
 import androidx.wear.tiles.material.Text
 
-
+/**
 @Composable
 fun GuidageScreen(){
     Column(
@@ -98,7 +98,7 @@ fun SearchDest() {
 
 
 
-
+**/
 
 
 
